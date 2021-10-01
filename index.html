@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebView Carousell</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'>
+    
+    <meta name="bs:input:zohoToken" content="type=string, description=zoho token" />
+
+    <meta name="bs:output:selectedGame" content="type=string, description=Time output" />
+    <meta name="bs:input:buttonName" content="type=string, description=Display name for the button" />
+    <meta name="bs:outlet:Button Clicked" />
+</head>
+
+<body onload="fetchData()">
+    <div class="layout">
+        <div class="nav-layout">
+            <div class="search-bar-main">
+                <div class="search-div">
+                    <label for="search"><span class="material-icons">
+                            search
+                        </span></label>
+                    <input onkeydown="filterOut()" class="search-input" type="text" id="search" name="search"
+                        placeholder="Search Games">
+                </div>
+                <div class="font-awesome dropdown-select">
+                    <select class="fa fa-select">
+                        <!-- <option class="fa fa-def" value="default" selected>&#xf0dc Default Order </option> -->
+                        <option class="fa fa-asc" value="asc">&#xf15d Title </option>
+                        <option class="fa fa-des" value="des">&#xf15e Title </option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div class="main scroll">
+        <!--  <div class="item-layout">
+            <div class="item-content">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/7170zinZGIL._SL1000_.jpg" alt=""
+                    class="item-img">
+                <h3 class="item-text item-title">A Way Out</h3>
+                <h4 class="item-text item-price">₱0.00</h4>
+            </div>
+            <button class="btn-sell">Sell</button>
+       </div>  -->
+    </div>
+    <div class="nav-pagination">
+        <div onclick="pageLeftArrowClick()" class="pagination-left-arrow pages"><i class="fa fa-caret-left nav-page-arrow" aria-hidden="true"></i></div>
+        <div class="pagination-indexes">
+            <!-- <label class="nav-page-num pages selected-page" id="page-1">1</label> -->
+        </div>
+        <div onclick="pageRightArrowClick()" class="pagination-right-arrow pages"><i class="fa fa-caret-right nav-page-arrow" aria-hidden="true"></i></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script defer src="https://static.botstar.com/webview/sdk/webview-sdk-1.0.0.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
